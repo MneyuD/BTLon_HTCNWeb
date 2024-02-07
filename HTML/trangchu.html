@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../css/bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../javacripts/jquery-3.7.1.map.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="../javacripts/main.js"></script>
+</head>
+<body>
+        <header>
+            <div class="container-fluid top-bar">
+                <div class="container">
+                    <a href="#" class="a-vitri"><i class="fa fa-user" aria-hidden="true"><img src="../images/vitri.png" alt=""></i> Hệ thống cửa hàng</a>
+                    <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""></i> Tài khoản</a>
+                    <a href="#" class="info"><img src="../images/fb.png" alt="" style="margin-top: 9px; margin-left: 65px;"></a>
+                    <a href="#" class="info"><img src="../images/email.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/instagram.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/tik-tok.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/youtube.png" alt="" style="margin-top: 12px; margin-left: 10px;"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-main">
+                <div class="container">
+                    <a href="trangchu.html" class="logo">
+                        <img src="../images/logo.png" alt="" style="width: 100px; margin-top: -10px; margin-left: 40px;">
+                    </a>
+                </div>
+                <div class="header-search">
+                    <input required="" id="inputSearchAuto-3" class="input-search" name="q" maxlength="40" autocomplete="off" type="text" size="25" placeholder="Tìm kiếm sản phẩm...">
+                    <button type="submit" class="btn-search btn">
+                        <svg class="svg search" height="20px" width="20px" viewBox="0 0 24 24" style="width: 20px; color: #c5cee0;"><path d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.39zM11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"></path></svg>
+                    </button>
+                    </div>
+                <div class="header-right">
+                    <div class="hotline">
+                        <img src="../images/telephone-handle-silhouette.png" alt="" style="width: 15px; margin-top: 12px; margin-left: -90px;">
+                        <span class="sdt" style="font-size: 15px; margin-left: 32px; margin-top: -2px; float: left;">19001080</span>
+                        <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -7px;">Tổng đài miễn phí</span>
+                    </div>
+                    <div class="giohang">
+                        <button data-bs-toggle="modal" data-bs-target="#giohangmodal">
+                            <img src="../images/shopping-basket.png" alt="" style="width: 20px; margin-top: 1px; margin-left: -230px;">
+                            <span class="sdt" style="font-size: 15px; margin-left: 32px; margin-top: -5px; float: left;">(<span id="cartCount">0</span>) Sản phẩm</span>
+                            <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -2px;">Giỏ hàng</span>
+                        </button>
+                        <div class="modal fade" id="giohangmodal" role="dialog">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header"><h4 style="text-align: center; margin-left: 300px;">GIỎ HÀNG</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" id="nutdong"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="danhsachsp" onsubmit="cartTotal">
+                                            <form action="">
+                                                <table>
+                                                    <thead class="table-top">
+                                                        <tr>
+                                                            <th style="width: 80px;">Sản phẩm</th>
+                                                            <th style="width: 450px; padding-left: 20px;">Tên Sản Phẩm</th>
+                                                            <th>Giá</th>
+                                                            <th style="padding: 20px; width: 120px;">Số lượng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody> 
+                                                           
+                                                    </tbody>
+                                                </table>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <h5 style="font-size: 17px; font-weight: bold;">Tổng tiền: <span class="tongtien">0</span></h5>
+                                        <button style="background-color: #362116;">Thanh Toán</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class=" container-fluid nav-main">
+            <div class="container">
+                <div id="menu-main">
+                    <ul class="menu-1">
+                        <div class="menu-3">
+                                <span>
+                                    <li><a href="" style="font-size: 15px; width: 250px;"><img src="../images/menu.png" alt="" style="width: 15px; margin-top: -3px;"> DANH MỤC SẢN PHẨM</a>
+                                        <ul class="submenu">
+                                            <li class="submenu-chocung"><a href="cho.html"><img src="../images/dog.png" alt=""> Chó cưng<img src="../images/right-2.png" class="right-2"></a>
+                                                <ul class="submenu-chocho">
+                                                    <li class="submenu-2"><a href="thucanhat-cho.html">Thức ăn hạt</a></li>
+                                                    <li class="submenu-2"><a href="anvatcho-cho.html">Ăn vặt, bánh thưởng</a></li>
+                                                    <li class="submenu-2"><a href="patecho-cho.html">Pate, đồ hộp và sữa cho chó</a></li>
+                                                    <li class="submenu-2"><a href="patecho-cho.html">Đồ chơi cho chó</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-meocung"><a href="meo.html"><img src="../images/cat.png" alt=""> Mèo cưng<img src="../images/right-2.png" class="right-2"></a>
+                                                <ul class="submenu-chomeo">
+                                                    <li class="submenu-2"><a href="thucanhat-meo.html">Thức ăn hạt</a></li>
+                                                    <li class="submenu-2"><a href="anvatmeo.html">Ăn vặt, bánh thưởng</a></li>
+                                                    <li class="submenu-2"><a href="patemeo.html">Pate, đồ hộp và sữa cho mèo</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </span>
+                        </div>
+                        <div class="menu-2">
+                            <li><a href="">TRANG CHỦ</a></li>
+                            <li class="khuyenmai"><a href="khuyenmai.html">KHUYẾN MÃI <img src="../images/phai.png" alt="" style="width: 10px;margin-top: -2px;"></a>
+                                <ul class="submenu-khuyenmai">
+                                    <li class="submenu-2"><a href="muanhieugiatot.html">MUA NHIỀU GIÁ TỐT</a></li>
+                                    <li class="submenu-2"><a href="dealgiasieusoc.html">DEAL GIÁ SIÊU SỐC</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="chinhsachbaohanh.html">CHÍNH SÁCH BẢO HÀNH</a></li>
+                            <li class="tintuc"><a href="tintuc.html">TIN TỨC <img src="../images/phai.png" alt="" style="width: 10px;margin-top: -2px;"></a>
+                                <ul class="tintuc-menu">
+                                    <li class="submenu-tintuc"><a href="tinkhuyenmai.html">Tin khuyến mãi</a></A></li>
+                                    <li class="submenu-tintuc"><a href="tintuyendung.html">Tin tuyển dụng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Banner-->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../images/banner/banner2_web_d93f6404296c40c4b8967bfc8da8484d.webp" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../images/banner/banner3_web_eb27c3f1d2974530b6c11bb74c6aa5db.webp" class="d-block w-100" alt="...">
+              </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+          <!--Banner 2-->
+          <section class="container-fluid section-main">
+            <div class="banner_1">
+                <div class="row justify-content-md-center section_banner_1">
+                    <div class="col-md-2 banner1">
+                        <img src="../images/banner/banner-1.png" alt="" class="hinhbanner">
+                        <span><h5>SẢN PHẨM</h5></span>
+                        <span><h4>DÀNH CHO CHÓ</h4></span>
+                        <button class="btn-muangay"><a href="/html/cho.html">Mua ngay</a></button>
+                    </div>
+                    <div class="col-md-2 banner1">
+                        <img src="../images/banner/banner-2.png" alt="" class="hinhbanner">
+                        <span><h5>SẢN PHẨM</h5></span>
+                        <span><h4>DÀNH CHO MÈO</h4></span>
+                        <button class="btn-muangay"><a href="meo.html">Mua ngay</a></button>
+                    </div>
+                    <div class="col-md-2 banner1">
+                        <img src="../images/banner/banner-3.png" alt="" class="hinhbanner">
+                        <span><h5>TỦ THUỐC</h5></span>
+                        <span><h4>CHO CHÓ MÈO</h4></span>
+                        <button class="btn-muangay"><a href="#">Mua ngay</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section_deal">
+                <div class="title-top">
+                    <h2><a href="#">Sản Phẩm Nổi Bật</a></h2>
+                </div>
+                <div class="sp1">
+                    <div class="row justify-content-center sanphamnoibat">
+                        <div class="col-md-3 sanpham">
+                            <img id="picturesp" class="anhspnb" src="../images/products/spnb_1.png" alt="">
+                            <div class="product-name">
+                                <a href="thongtinsanpham.html">Hạt Grandmagic cho chó 1kg</a>
+                                <br>
+                                <bdi>80.000</bdi><span class="price">đ</span>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img id="picturesp" class="anhspnb" src="../images/products/spnb_4.png" alt="">
+                            <div class="product-name">
+                                <a href="thongtinsanpham2.html">Hạt ANF Cat 6 Free Indoor Adult 6kg</a>
+                                <br>
+                                <bdi>105.000</bdi><span class="price">đ</span>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img id="picturesp" class="anhspnb" src="../images/products/spnb_2.png" alt="">
+                            <div class="product-name">
+                                <a href="thongtinsanpham3.html">Hạt ANF Nature's Kitchen cho chó 2kg</a>
+                                <br>
+                                <bdi>375.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/products/spnb_3.png" alt="">
+                            <div class="product-name">
+                                <a href="">Hạt ANF 6 Free Dog cá hồi 2kg</a>
+                                <br>
+                                <bdi>460.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/products/spnb_5.png" alt="">
+                            <div class="product-name">
+                                <a href="">Pate Snappy Tom Premium cho mèo lon 85g</a>
+                                <br>
+                                <bdi>19.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flashsale">
+                <div class="title-top">
+                    <h2><a href="#" class="flashsale-text" style="color: red !important; font-weight: 600;">FLASH SALE <img src="../images/flash-sale.png" style="width: 25px; margin-top: -10px;"></a></h2>
+                </div>
+                <div class="sp1">
+                    <div class="row justify-content-center sanphamnoibat">
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/flashsale/flashsale1.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Pate Simba cho chó lon 415g</a>
+                                <br>
+                                <div class="giatien">
+                                    <p>30.000<span class="price">đ</span></p>
+                                    <bdi>19.000<span class="price">đ</span></bdi>
+                                </div>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/flashsale/flashsale2.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Hạt Royal Canin Mini Adult cho giống chó nhỏ trên 10 tháng tuổi</a>
+                                <br>
+                                <div class="giatien">
+                                    <p>185.000<span class="price">đ</span></p>
+                                    <bdi>165.000<span class="price">đ</span></bdi>
+                                </div>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/flashsale/flashsale3.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Ức gà sấy cho mèo Natural Core 40g</a>
+                                <br>
+                                <div class="giatien">
+                                    <p>40.000<span class="price">đ</span></p>
+                                    <bdi>34.000<span class="price">đ</span></bdi>
+                                </div>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/flashsale/flashsale4.webp" alt="">
+                            <div class="product-name">
+                                <a href="">Catnip cho mèo Bioline 20g</a>
+                                <br>
+                                <div class="giatien">
+                                    <p>90.000<span class="price">đ</span></p>
+                                    <bdi>85.000<span class="price">đ</span></bdi>
+                                </div>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/flashsale/flashsale5.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Bánh quy sữa cho chó Doggyman 180g</a>
+                                <br>
+                                <div class="giatien">
+                                    <p>35.000<span class="price">đ</span></p>
+                                    <bdi>25.000<span class="price">đ</span></bdi>
+                                </div>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <section class="container-fluid section_banner_2">
+            <div class="title-bot">
+                <h2><a href="#">DEAL HOT</a></h2>
+            </div>
+            <div class="banner2">
+                <div class="anhbanner2">
+                        <a href="#" class="deal-banner"><img src="../images/banner/deal1.webp" alt=""></a>
+                        <a href="#" class="deal-banner"><img src="../images/banner/deal2.webp" alt=""></a>
+                        <a href="#" class="deal-banner"><img src="../images/banner/deal3.webp" alt=""></a>
+                        <a href="#" class="deal-banner"><img src="../images/banner/deal4.webp" alt=""></a>
+                </div>
+            </div>
+          </section>
+          <section class="container-fluid section-chocho">
+            <div class="section-chocho-main">
+                <div class="title-bot">
+                    <h2><a href="cho.html">Sản Phẩm Cho Chó</a></h2>
+                </div>
+                <div class="sp1">
+                    <div class="row justify-content-center sanphamnoibat">
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chocho-trangchu/chochott1.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Xương sữa Milky Bone Goodies</a>
+                                <br>
+                                <bdi>120.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chocho-trangchu/chochott2.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Xương Orgo sạch răng vị bò cho chó 90g</a>
+                                <br>
+                                <bdi>35.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chocho-trangchu/chochott4.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Ganador Adult Salmon and Rice 3kg</a>
+                                <br>
+                                <bdi>185.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chocho-trangchu/chochott3.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Hạt Nutri Source PureVita Cá hồi và Đậu Hà Lan cho chó 2,26kg</a>
+                                <br>
+                                <bdi>399.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chocho-trangchu/chochott5.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Smartheart Power Pack Puppy 3kg</a>
+                                <br>
+                                <bdi>275.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <section class="container-fluid section-chomeo">
+            <div class="section-chocho-main">
+                <div class="title-bot">
+                    <h2><a href="meo.html">Sản Phẩm Cho Mèo</a></h2>
+                </div>
+                <div class="sp1">
+                    <div class="row justify-content-center sanphamnoibat">
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chomeo-trangchu/chomeott1.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Thịt cá hồi hun khói cho mèo Bowwow 70g</a>
+                                <br>
+                                <bdi>65.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chomeo-trangchu/chomeott2.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Nutrience Infusion Adult Indoor 2.27kg</a>
+                                <br>
+                                <bdi>422.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chomeo-trangchu/chomeott3.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Hạt Natural Core EcoC1 đa đạm cho mèo 5kg</a>
+                                <br>
+                                <bdi>780.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chomeo-trangchu/chomeott4.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Pate sữa dê Kit Cat cá ngừ lon 70g</a>
+                                <br>
+                                <bdi>28.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                        <div class="col-md-3 sanpham">
+                            <img class="anhspnb" src="../images/chomeo-trangchu/chomeott5.jpg" alt="">
+                            <div class="product-name">
+                                <a href="">Sữa KMR cho mèo con 340g</a>
+                                <br>
+                                <bdi>620.000<span class="price">đ</span></bdi>
+                            </div>
+                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+          <section class="container-fluid section-tintuc-main">
+            <div class="container-fluid section-tintuc">
+                <div class="title-bot">
+                    <h2><a href="#">Tin Mới Nhất</a></h2>
+                </div>
+                <div class="halo-row column-4 tintuc-main">
+                    <div class="row justify-content-center section-tintuc-1">
+                        <div class="col tintuc-1">
+                            <div class="news">
+                                <img src="../images/news/tintuc1.png" alt="">
+                                <a href="https://www.petshome.vn/blogs/news/bat-mi-05-loai-banh-thuong-cho-cun-ngay-trong-bep-cua-ban">BẬT MÍ 05 LOẠI BÁNH THƯỞNG CHO CÚN NGAY TRONG BẾP CỦA BẠN</a>
+                                <br>
+                                <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 14/11/2023</p>
+                                <p class="news-noidung">PET'S HOME SALE SẬP SÀN 🔥 - SEN ĐỪNG BỎ LỠ 🥳️🤩CÁC SẢN PHẨM TRỊ VE RẬN CHO CHÓ MÈO. 🐈🐕👉 Mùa ...</p>
+                            </div>
+                            <div class="news">
+                                <img src="../images/news/tintuc2.png" alt="">
+                                <a href="https://www.petshome.vn/blogs/news/that-su-su-dung-banh-thuong-cho-cho-meo-co-lam-chung-nghe-loi">THẬT SỰ SỬ DỤNG BÁNH THƯỞNG CHO CHÓ MÈO CÓ LÀM CHÚNG NGHE LỜI?</a>
+                                <br>
+                                <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 16/10/2023</p>
+                                <p class="news-noidung">Bên cạnh các bữa ăn chính, bánh thưởng cho chó mèo là món ăn quen thuộc với các “Boss” cưng. ...</p>
+                            </div>
+                            <div class="news">
+                                <img src="../images/news/tintuc3.png" alt="">
+                                <a href="https://www.petshome.vn/blogs/news/bat-mi-05-loai-banh-thuong-cho-cun-ngay-trong-bep-cua-ban">BÁNH THƯỞNG CHÓ DẠNG KHÔ HAY ƯỚT TỐT HƠN?</a>
+                                <br>
+                                <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 23/9/2023</p>
+                                <p class="news-noidung">Nếu bạn không thể chối từ trà sữa, thì chú chó của bạn cũng không dễ dàng gì bỏ qua các loại bánh thưởng chó ...</p>
+                            </div>
+                            <div class="news">
+                                <img src="../images/news/tintuc4.png" alt="">
+                                <a href="https://www.petshome.vn/blogs/news/bat-mi-05-loai-banh-thuong-cho-cun-ngay-trong-bep-cua-ban">
+                                    TUYỆT CHIÊU CHỌN THỨC ĂN CHO HUSKY MÙA RỤNG LÔNG</a>
+                                <br>
+                                <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 12/9/2023</p>
+                                <p class="news-noidung">“Mùa lông bay” chắc là nỗi ám ảnh lớn nhất của các Sen đang chăm “Đại ngáo” Husky. Nhưng bạn có bao giờ tìm hiểu lý do vì sao các Boss ...</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+            </div>
+          </section>
+          
+          <footer class="footer">
+            <div class="footer-top">
+                <div class="footer_dangky">
+                    <h4>Đăng Ký Nhận Ưu Đãi</h4>
+                    <p>Đăng ký thành viên ngay hôm nay để nhận email về sản phẩm mới và chương trình khuyến mãi của shop</p>
+                    <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input form-input-placeholder" value="" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email của bạn...">
+                    <button class="btn-dangkythanhvien">Đăng Ký</button>
+                </div>
+            </div>
+            <div class="halo-row column-4">
+                <div class="row footer-thongtin">
+                    <div class="footer-item">
+                        <h5>Shop</h5>
+                        <a href="#"><span>Dành Cho Chó</span></a>
+                        <br>
+                        <a href="#"><span>Dành Cho Mèo</span></a>
+                    </div>
+                    <div class="footer-item-2">
+                        <h5>Pet Shop</h5>
+                        <a href="#"><span>Giới Thiệu</span></a>
+                        <br>
+                        <a href="#"><span>Thành Viên</span></a>
+                        <br>
+                        <a href="#"><span>Điều Khoản Sử Dụng</span></a>
+                        <br>
+                        <a href="#"><span>Tuyển Dụng</span></a>
+                    </div>
+                    <div class="footer-item-3">
+                        <h5>Hỗ Trợ Khách Hàng</h5>
+                        <a href="#"><span>Chính Sách Đổi Trả Hàng</span></a>
+                        <br>
+                        <a href="#"><span>Phương Thức Vận Chuyển</span></a>
+                        <br>
+                        <a href="#"><span>Chính Sách Bảo Mật</span></a>
+                        <br>
+                        <a href="#"><span>Phương Thức Thanh Toán</span></a>
+                        <br>
+                        <a href="#"><span>Chính Sách Hoàn Tiền</span></a>
+                    </div>
+                    <div class="footer-item-4">
+                        <h5>Liên hệ</h5>
+                        <span>CÔNG TY CỔ PHẦN THUƠNG MẠI & DỊCH VỤ</span>
+                        <br>
+                        <span>Hello </span>
+                        <br>
+                        <span>12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam</span>
+                        <br>
+                        <span><img src="../images/telephone-handle-silhouette1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Hotline: 012345678</span>
+                        <br>
+                        <span><img src="../images/email1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Email: sinhvien@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© Bản quyền thuộc về Pet's Home & Paddy.vn</span>
+            </div>
+        </footer>
+    
+</body>
+</html>
