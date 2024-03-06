@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Khuyến Mãi</title>
+    <link rel="stylesheet" href="../css/bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+    <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+</head>
+<body>
+    <header>
+        <div class="container-fluid top-bar">
+            <div class="container">
+                <a href="#" class="a-vitri"><i class="fa fa-user" aria-hidden="true"><img src="../images/vitri.png" alt=""></i> Hệ thống cửa hàng</a>
+                <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""></i> Tài khoản</a>
+                <div class="info-1">
+                    <a href="#" class="info"><img src="../images/fb.png" alt="" style="margin-top: 9px; margin-left: 65px;"></a>
+                    <a href="#" class="info"><img src="../images/email.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/instagram.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/tik-tok.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
+                    <a href="#" class="info"><img src="../images/youtube.png" alt="" style="margin-top: 12px; margin-left: 10px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="trangchu.html" class="logo">
+                    <img src="../images/logo.png" alt="" style="width: 100px; margin-top: -10px; margin-left: 40px;">
+                </a>
+            </div>
+            <div class="header-search">
+                <input required="" id="inputSearchAuto-3" class="input-search" name="q" maxlength="40" autocomplete="off" type="text" size="25" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit" class="btn-search btn">
+                    <svg class="svg search" height="20px" width="20px" viewBox="0 0 24 24" style="width: 20px; color: #c5cee0;"><path d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.39zM11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"></path></svg>
+                </button>
+                </div>
+            <div class="header-right">
+                <div class="hotline">
+                    <img src="../images/telephone-handle-silhouette.png" alt="" style="width: 15px; margin-top: 12px; margin-left: -90px;">
+                    <span class="sdt" style="font-size: 15px; margin-left: 32px; margin-top: -2px; float: left;">19001080</span>
+                    <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -7px;">Tổng đài miễn phí</span>
+                </div>
+                <div class="giohang">
+                    <button data-bs-toggle="modal" data-bs-target="#giohangmodal">
+                        <img src="../images/shopping-basket.png" alt="" style="width: 20px; margin-top: 1px; margin-left: -230px;">
+                        <span class="sdt" style="font-size: 15px; margin-left: 32px; margin-top: -5px; float: left;">(<span id="cartCount">0</span>) Sản phẩm</span>
+                        <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -2px;">Giỏ hàng</span>
+                    </button>
+                    <div class="modal fade" id="giohangmodal" role="dialog">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header"><h4 style="text-align: center; margin-left: 300px;">GIỎ HÀNG</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" id="nutdong"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="danhsachsp" onsubmit="cartTotal">
+                                        <form action="">
+                                            <table>
+                                                <thead class="table-top">
+                                                    <tr>
+                                                        <th style="width: 80px;">Sản phẩm</th>
+                                                        <th style="width: 450px; padding-left: 20px;">Tên Sản Phẩm</th>
+                                                        <th>Giá</th>
+                                                        <th style="padding: 20px; width: 120px;">Số lượng</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody> 
+                                                       
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <h5 style="font-size: 17px; font-weight: bold;">Tổng tiền: <span class="tongtien">0</span></h5>
+                                    <button style="background-color: #362116;">Thanh Toán</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+    <nav class=" container-fluid nav-main">
+        <div class="container">
+            <div id="menu-main">
+                <ul class="menu-1">
+                    <div class="menu-3">
+                            <span>
+                                <li><a href="" style="font-size: 15px; width: 250px;"><img src="../images/menu.png" alt="" style="width: 15px; margin-top: -3px;"> DANH MỤC SẢN PHẨM</a>
+                                    <ul class="submenu">
+                                        <li class="submenu-chocung"><a href="cho.html"><img src="../images/dog.png" alt=""> Chó cưng<img src="../images/right-2.png" class="right-2"></a>
+                                            <ul class="submenu-chocho">
+                                                <li class="submenu-2"><a href="thucanhat-cho.html">Thức ăn hạt</a></li>
+                                                <li class="submenu-2"><a href="anvatcho-cho.html">Ăn vặt, bánh thưởng</a></li>
+                                                <li class="submenu-2"><a href="patecho-cho.html">Pate, đồ hộp và sữa cho chó</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="submenu-meocung"><a href="meo.html"><img src="../images/cat.png" alt=""> Mèo cưng<img src="../images/right-2.png" class="right-2"></a>
+                                            <ul class="submenu-chomeo">
+                                                <li class="submenu-2"><a href="thucanhat-meo.html">Thức ăn hạt</a></li>
+                                                <li class="submenu-2"><a href="anvatmeo.html">Ăn vặt, bánh thưởng</a></li>
+                                                <li class="submenu-2"><a href="patemeo.html">Pate, đồ hộp và sữa cho mèo</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </span>
+                    </div>
+                    <div class="menu-2">
+                        <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                        <li class="khuyenmai"><a href="khuyenmai.html">KHUYẾN MÃI <img src="../images/phai.png" alt="" style="width: 10px;margin-top: -2px;"></a>
+                            <ul class="submenu-khuyenmai">
+                                <li class="submenu-2"><a href="muanhieugiatot.html">MUA NHIỀU GIÁ TỐT</a></li>
+                                <li class="submenu-2"><a href="dealgiasieusoc.html">DEAL GIÁ SIÊU SỐC</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="chinhsachbaohanh.html">CHÍNH SÁCH BẢO HÀNH</a></li>
+                        <li class="tintuc"><a href="tintuc.html">TIN TỨC <img src="../images/phai.png" alt="" style="width: 10px;margin-top: -2px;"></a>
+                            <ul class="tintuc-menu">
+                                <li class="submenu-tintuc"><a href="tinkhuyenmai.html">Tin khuyến mãi</a></A></li>
+                                <li class="submenu-tintuc"><a href="tintuyendung.html">Tin tuyển dụng</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/html/trangchu.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tin Khuyến Mãi</li>
+        </ol>
+    </nav>
+    <!--Nội dung-->
+    <section class="container-fluid section-tintucc">
+        <div class="tintuc-list">
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale1.png" alt="">
+                <a href="#">SIÊU PHẨM MORANDO - MUA 5 TẶNG 1 KHÔNG THỂ BỎ LỠ!!!</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 16/11/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>VĐỪNG BỎ LỠ SIÊU KHUYẾN MÃI MORANDO ĐẾN TỪ NGỒI NHÀ PET'S HOME!!!Đừng bỏ lỡ chuyến xe cuối cùng, cũng như không thể bỏ lỡ chương trình khuyến mãi siêu hấp dẫn đến từ nhà Pet's Home dành cho các BOSS fan của dòng pate MORANDO! Pate Morando Miglior Cane cho Chó 400...</p>
+                </div>
+            </div>
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale2.webp" alt="">
+                <a href="#">CHƯƠNG TRÌNH MIỄN PHÍ VẬN CHUYỂN - NHẬN QUÀ TO</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 10/11/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>Ở NHÀ KHÔNG KHÓ - ĐÃ CÓ PET'S HOME LO Mua sắm an toàn, nay lại được Miễn phí vận chuyển!FREE SHIP NGAY cho đơn hàng từ 200k!Quà tặng đặc biệt hấp dẫn (thức ăn hạt, pate, bánh thưởng...) dành cho đơn hàng trên 350k Voucher tắm gội đồng giá 100k*Phụ thu chỉ từ 50k dành...</p>
+                </div>
+            </div>
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale3.webp" alt="">
+                <a href="#">Nhận ƯU ĐÃI KHỦNG khi trở thành Thành viên của shop</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 1/11/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>Hãy đến mua hàng ở các cửa hàng Pet’s Home và trở thành khách hàng thành viên của gia đình Pet's Home để nhận ngay Ưu đãi siêu đặc biệt Những lợi ích của khách hàng Thành viên Pet's HomeĐối với Thành viên BạcGiảm ngay 2% tất cả các hóa đơn trên 100.000đ khi...</p>
+                </div>
+            </div>
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale4.webp" alt="">
+                <a href="#">TUẦN LỄ SIÊU SALE KHỦNG DÀNH CHO THÚ CƯNG</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 25/10/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>💥 TUẦN LỄ SIÊU SALE KHỦNG DÀNH CHO THÚ CƯNG 💥Ưu đãi ngập trời - Giá lại quá hời - Đặc biệt chỉ có tại Pet's Home👇👇👇🔥 Siêu SALE "Phụ kiện thú cưng" - Ưu đãi giảm giá lên đến 30% 🔥 Siêu SALE "Thức ăn hạt chó mèo"- Hoàn ngay 5% khi mua số lượng 2- Hoàn ngay 10% k...</p>
+                </div>
+            </div>
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale5.png" alt="">
+                <a href="#">SĂN PHIẾU ƯU ĐÃI 1 TRIỆU KHI MUA SẢN PHẨM THÚ CƯNG TẠI PET'S HOME</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 2/10/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>SĂN NGAY VOUCHER MIỄN PHÍ CHO BOSS CƯNG thôi cả nhà ơi  🎉Giá trị Voucher lên đến 1 triệu, áp dụng cho tất cả dịch vụ chăm sóc tại Pet's Home:🎁 Tặng voucher dịch vụ 50k với giá trị đơn 300k🎁 Tặng voucher dịch vụ 100k với giá trị đơn 500k🎁 Tặng voucher dịch vụ...</p>
+                </div>
+            </div>
+            <div class="news-collecton">
+                <img src="/images/banner/sale/sale6.png" alt="">
+                <a href="#">ƯU ĐÃI ĐẶC BIỆT MÙA GIÁNG SINH TẠI PET'S HOME - CỬA HÀNG THÚ CƯNG</a>
+                <div class="thoigianpost">
+                    <p><img src="/images/calendar.png" alt=""> 16/11/2023 - Văn Thài</p>
+                </div>
+                <div class="noidungtintuc">
+                    <p>ƯU ĐÃI ĐẶC BIỆT MÙA GIÁNG SINH TẠI PET'S HOME Khuyến mãi giảm giá lên đến 30%+++. Chương trình kéo dài từ ngày 13 đến ngày 31.12.2021.Áp dụng trên toàn hệ thống cửa hàng thú cưng Pet's Home. Giảm hơn 20%+ Gel dinh dưỡngBeaphar Supplement - Pate dinh dưỡng vị gan cho...</p>
+                </div>
+            </div>
+        </div>
+        <aside class="menu-danhmuc">
+            <div class="menu-danhmuc-main">
+                <h3>DANH MỤC</h3>
+                    <li><a href="trangchu.html">Trang chủ</a></li>
+                    <li><a href="khuyenmai.html">Khuyến mãi</a></li>
+                    <li><a href="chinhsachbaohanh.html">Chính sách bảo hành</a></li>
+                    <li><a href="tintuc.html">Tin tức</a></li>
+                    <li><a href="lienhe.html">Liên hệ</a></li>
+                <h3 style="margin-top: 30px;">BÀI VIẾT LIÊN QUAN</h3>
+                    <div class="baivietlienquan">
+                        <img src="/images/banner/baivietlienquan/banner_1.webp" alt="">
+                        <a href="#"><h4>SĂN PHIẾU ƯU ĐÃI 1 TRIỆU KHI MUA SẢN PHẨM THÚ CƯNG TẠI SHOP</h4></a>
+                        <i>29/10/2023</i>
+                    </div>
+                    <div class="baivietlienquan">
+                        <img src="/images/banner/baivietlienquan/banner_2.png" alt="">
+                        <a href="#"><h4>THỨC ĂN CHO CHÓ NÀO LÀ TỐT NHẤT?</h4></a>
+                        <i>16/10/2023</i>
+                    </div>
+                    <div class="baivietlienquan">
+                        <img src="/images/banner/baivietlienquan/banner_3.png" alt="">
+                        <a href="#"><h4>Nguyên nhân gây rụng lông ở chó</h4></a>
+                        <i>15/10/2023</i>
+                    </div>
+                    <div class="baivietlienquan">
+                        <img src="/images/banner/baivietlienquan/banner_4.webp" alt="">
+                        <a href="#"><h4>Thuốc tránh thai cho chó mèo: Hiểm họa khôn lường</h4></a>
+                        <i>20/9/2023</i>
+                    </div>
+            </div>
+        </aside>
+    </section>
+    
+    <footer class="footer"">
+        <div class="footer-top">
+            <div class="footer_dangky">
+                <h4>Đăng Ký Nhận Ưu Đãi</h4>
+                <p>Đăng ký thành viên ngay hôm nay để nhận email về sản phẩm mới và chương trình khuyến mãi của shop</p>
+                <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input form-input-placeholder" value="" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email của bạn...">
+                <button class="btn-dangkythanhvien">Đăng Ký</button>
+            </div>
+        </div>
+        <div class="halo-row column-4">
+            <div class="row footer-thongtin">
+                <div class="footer-item">
+                    <h5>Shop</h5>
+                    <a href="#"><span>Dành Cho Chó</span></a>
+                    <br>
+                    <a href="#"><span>Dành Cho Mèo</span></a>
+                </div>
+                <div class="footer-item-2">
+                    <h5>Pet Shop</h5>
+                    <a href="#"><span>Giới Thiệu</span></a>
+                    <br>
+                    <a href="#"><span>Thành Viên</span></a>
+                    <br>
+                    <a href="#"><span>Điều Khoản Sử Dụng</span></a>
+                    <br>
+                    <a href="#"><span>Tuyển Dụng</span></a>
+                </div>
+                <div class="footer-item-3">
+                    <h5>Hỗ Trợ Khách Hàng</h5>
+                    <a href="#"><span>Chính Sách Đổi Trả Hàng</span></a>
+                    <br>
+                    <a href="#"><span>Phương Thức Vận Chuyển</span></a>
+                    <br>
+                    <a href="#"><span>Chính Sách Bảo Mật</span></a>
+                    <br>
+                    <a href="#"><span>Phương Thức Thanh Toán</span></a>
+                    <br>
+                    <a href="#"><span>Chính Sách Hoàn Tiền</span></a>
+                </div>
+                <div class="footer-item-4">
+                    <h5>Liên hệ</h5>
+                    <span>CÔNG TY CỔ PHẦN THUƠNG MẠI & DỊCH VỤ</span>
+                    <br>
+                    <span>MST: xxxxxxxx</span>
+                    <br>
+                    <span>12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam</span>
+                    <br>
+                    <span><img src="../images/telephone-handle-silhouette1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Hotline: 012345678</span>
+                    <br>
+                    <span><img src="../images/email1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Email: sinhvien@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© Bản quyền thuộc về Pet's Home & Paddy.vn</span>
+        </div>
+    </footer>
+    <script src="/javacripts/main.js"></script>
+</body>
+</html>
