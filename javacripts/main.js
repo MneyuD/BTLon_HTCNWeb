@@ -1,46 +1,18 @@
-const LOCAL_KEY = 'login';
 
+
+
+
+
+
+var list = []
 const btn = document.querySelectorAll(".themvaogiohang-btn")
-let listBin = [];
-//
 
-function addCart(index) {
-    var found = false
-    listBin.forEach((item) => {
-        if (item.MaSP == index) {
-            found = true;
-            item.Amount += 1;
-        }
-    })
-    if (!found)
-    switch (index) {
-        case 1: {
-            listBin.push({
-                MaSP: 1,
-                TenSp: "Hạt Grandmagic cho chó 1kg",
-                Price: 80000,
-                Amount: 1
-            })
-        }
-    }
-    count = document.getElementById("cartCount")
-    tong = document.getElementById("total")
-    var total = 0, totalCount = 0;
-    listBin.forEach((item) => {
-        total += item.Price * item.Amount
-        totalCount += item.Amount
-    })
-    tong.innerText = total;
-    count.innerText = totalCount;
-    console.log(listBin);
-}
+const modalBtn = document.getElementById("modal")
+modalBtn.addEventListener("click", updatePrice)
 
-const display = () => {
-    table = document.getElementById("table")
-    table.innerHTML += "<tr><td style=>" + listBin[listBin.length - 1].MaSP + "</td><td>" + listBin[listBin.length - 1].TenSp + "</td><td>" + listBin[listBin.length - 1].Price + "</td><td>" + listBin[listBin.length - 1].Amount + "</td><td><button> . </button></td></tr>";
-}
+var sum = 0;
 
-btn.forEach(function(button){
+Array.from(btn).forEach(function(button){
     
     button.addEventListener("click",function(event){{
         const btnItem = event.target
@@ -48,10 +20,11 @@ btn.forEach(function(button){
         const productImg = product.querySelector("img").src
         const productName = product.querySelector("a").innerText
         const productPrice = product.querySelector("bdi").innerText
+        sum += parseInt(productPrice)
         //console.log(productImg,productName,productPrice)
         addcart(productImg,productName,productPrice)
-        console.log(product)
-           cartCount++;
+        //console.log(product)
+        cartCount++;
         updateCartCount();
         deleteCart()
         //localStorage.setItem(productImg,productName,productPrice)
@@ -67,51 +40,214 @@ function updateCartCount() {
     console.log(cartCount)
 }
 
-function dangky(e){
+
+///da sua
+function dangky(event) {
     event.preventDefault();
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const numberphone = document.getElementById("numberphone").value;
-    const password = document.getElementById("password").value;
-    const user     = {
-        username : username,
-        email : email,
-        password : password,
+
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const numberphoneInput = document.getElementById("numberphone");
+    const passwordInput = document.getElementById("password");
+
+    const usernameError = document.getElementById("usernameError");
+    const emailError = document.getElementById("emailError");
+    const numberphoneError = document.getElementById("numberphoneError");
+    const passwordError = document.getElementById("passwordError");
+
+    const username = usernameInput.value;
+    const email = emailInput.value;
+    const numberphone = numberphoneInput.value;
+    const password = passwordInput.value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?!.*\s).{8,}$/;
+    const fullNameRegex = /^[a-zA-Z\sĐđÀÁÂẦẤẨẪẬẮẰẲẴẶẸẺẼỀẾỂỄỆÈÉÊỀẾỂỄỆÍÌỈĨỊÒÓÔỒỐỔỖỘỌỎỐỒỔỖỘỤÙÚỦŨỨỪỬỮỰỲÝỶỸỴàáâầấẩẫậắằẳẵặẹẻẽềếểễệèéêềếểễệíìỉĩịòóôồốổỗộọỏốồổỗộụùúủũứừửữựỳýỷỹỵ]+$/u;
+    const phoneNumberRegex = /^\d{10}$/;
+
+    usernameError.textContent = "";
+    emailError.textContent = "";
+    numberphoneError.textContent = "";
+    passwordError.textContent = "";
+
+    let isValid = true;
+
+    if (!fullNameRegex.test(username)) {
+        usernameError.textContent = "Vui lòng nhập họ tên hợp lệ.";
+        isValid = false;
     }
-    const json = JSON.stringify(user);
-    const userLocal = localStorage.getItem(LOCAL_KEY);
-    const dataParse = JSON.parse(userLocal);
-    if(dataParse) {
-        if(dataParse.email === email) alert("Bạn đã đăng ký tài khoản này rồi")
+
+    if (!emailRegex.test(email)) {
+        emailError.textContent = "Vui lòng nhập địa chỉ email hợp lệ.";
+        isValid = false;
+    }
+
+    if (!phoneNumberRegex.test(numberphone)) {
+        numberphoneError.textContent = "Vui lòng nhập số điện thoại hợp lệ (10 chữ số).";
+        isValid = false;
+    }
+
+    if (!passwordRegex.test(password)) {
+        passwordError.textContent = "Mật khẩu không hợp lệ. Mật khẩu phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ số, 1 chữ in hoa, 1 chữ thường và 1 ký tự đặc biệt.";
+        isValid = false;
+    }
+
+    if (isValid) {
+        // Kiểm tra xem email đã tồn tại trong localStorage chưa
+        const existingUserEmail = localStorage.getItem(email);
+        if (existingUserEmail) {
+            emailError.textContent = "Email đã được sử dụng. Vui lòng nhập một địa chỉ email khác.";
+            return; // Ngừng thực hiện khi email đã tồn tại
+        }
+
+        // Kiểm tra xem số điện thoại đã tồn tại trong localStorage chưa
+        const existingUserPhone = Object.values(localStorage).find((item) => {
+            const storedUser = JSON.parse(item);
+            return storedUser.numberphone === numberphone;
+        });
+
+        if (existingUserPhone) {
+            numberphoneError.textContent = "Số điện thoại đã được sử dụng. Vui lòng nhập một số điện thoại khác.";
+            return; // Ngừng thực hiện khi số điện thoại đã tồn tại
+        }
+
+        const user = {
+            username: username,
+            email: email,
+            numberphone: numberphone,
+            password: password,
+        };
+
+        // Lưu thông tin người dùng dưới dạng định danh là email
+        const json = JSON.stringify(user);
+        localStorage.setItem(email, json);
+        alert("Đăng ký thành công!");
+        window.location.href = "dangnhap.html";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentUser = sessionStorage.getItem('currentUser');
+
+    if (currentUser) {
+        const user = JSON.parse(currentUser);
+        const userWelcome = document.getElementById("user-welcome");
+
+        if (userWelcome) {
+            userWelcome.textContent = `Xin chào, ${user.name}!`;
+        }
+    }
+});
+function login(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
+
+    // Lấy thông tin người dùng từ localStorage
+    const userData = JSON.parse(localStorage.getItem(email));
+
+    if (!userData) {
+        emailError.textContent = "Email không tồn tại. Vui lòng kiểm tra lại hoặc đăng ký.";
+        passwordError.textContent = ""; // Đảm bảo không hiển thị lỗi mật khẩu nếu email không tồn tại
         return;
     }
-    localStorage.setItem(LOCAL_KEY,json);
-    alert("Đăng ký thành công!");
-    window.location.href="dangnhap.html"
+
+    if (password !== userData.password) {
+        emailError.textContent = "";
+        passwordError.textContent = "Mật khẩu không chính xác.";
+        return;
+    }
+
+    // Đăng nhập thành công
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    // Tạo đối tượng người dùng chỉ với tên và email để lưu vào sessionStorage
+    const currentUser = {
+        name: userData.name,
+        email: email
+    };
+
+    // Lưu thông tin người dùng vào sessionStorage
+    sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+    // Chuyển hướng đến trang chủ
+    window.location.href = "trangchu.html";
 }
-function login(e){
-    event.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const user = localStorage.getItem(LOCAL_KEY);
-    const data = JSON.parse(user);
-    console.log('#Duy Phan console', data)
-    if(user == null ){
-        alert("Vui lòng nhập email và mật khẩu");
+
+// Hàm kiểm tra trạng thái đăng nhập và thực hiện thanh toán
+function checkout() {
+    // Kiểm tra xem người dùng đã đăng nhập hay chưa
+    const currentUser = sessionStorage.getItem('currentUser');
+
+    if (!currentUser) {
+        // Nếu không có thông tin đăng nhập trong sessionStorage, hiển thị cảnh báo và không thực hiện thanh toán
+        alert('Vui lòng đăng nhập trước khi thanh toán!');
+        return;
     }
-    else if(email == data.email && password == data.password ){
-        alert("Đăng nhập thành công!");
-        window.location.href="trangchu.html"
+
+    // Nếu đã đăng nhập, thực hiện các thao tác thanh toán ở đây
+    // Ví dụ: xử lý thanh toán và reset giỏ hàng
+
+    // Hiển thị cảnh báo thanh toán thành công
+    alert('Thanh toán thành công!');
+
+    // Đóng modal sau khi thanh toán (nếu có modal)
+    const modalElement = document.getElementById('giohangmodal');
+    if (modalElement) {
+        const bootstrapModal = new bootstrap.Modal(modalElement);
+        bootstrapModal.hide();
     }
-    else{
-        alert("Đăng nhập thất bại!");
+
+    // Reset giỏ hàng và cập nhật giao diện sau khi thanh toán
+    resetCart();
+
+    // Nếu muốn ẩn nút "Thanh Toán" sau khi thanh toán thành công, có thể ẩn nút này
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) {
+        checkoutBtn.style.display = 'none';
     }
 }
+
+// Sự kiện click vào nút Thanh Toán - chỉ gắn sự kiện khi đã đăng nhập thành công
+function handleCheckoutButtonClick() {
+    // Kiểm tra trạng thái đăng nhập của người dùng
+    const currentUser = sessionStorage.getItem('currentUser');
+
+    if (currentUser) {
+        // Nếu đã đăng nhập, gắn sự kiện cho nút Thanh Toán
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        checkoutBtn.addEventListener('click', checkout);
+    } else {
+        // Nếu chưa đăng nhập, không gắn sự kiện cho nút Thanh Toán
+        alert('Vui lòng đăng nhập trước khi thanh toán!');
+    }
+}
+
+// Gọi hàm để gắn sự kiện cho nút Thanh Toán
+handleCheckoutButtonClick();
+
+
+//tao bien dem
+var count = 0
+
 //them vao gio hang
 function addcart(productImg,productName,productPrice){
+    //tang so hang trong gio
+    list.forEach((item) => {
+        item == event.currentTarget.parentElement.children[1].children[0].innerText
+        return
+    })
+
+    list.push(event.currentTarget.parentElement.children[1].children[0].innerText)
+    console.log(event.currentTarget.parentElement.children[1].children[0].innerText)
+    document.getElementById("cartCount").innerText = ++count
     const addtr = document.createElement("tr")
     const cartItem = document.querySelectorAll("tbody tr")
-    for ( const i = 0; i < cartItem.length ; i++){
+    for (var i = 0; i < cartItem.length ; i++){
         const productT = document.querySelectorAll(".tensp-giohang")
         if(productT[i].innerHTML == productName){
             const inputCheck = cartItem[i].querySelector("input")
@@ -120,19 +256,19 @@ function addcart(productImg,productName,productPrice){
             inputCheck.value = themsoluong;
             console.log(themsoluong)
             cartIteam.remove()
+            
         }
     }
 
-    const trcontent = '<tr class="bodytable"><td><img src='+productImg+' alt="" style="width: 70px;"></td><td style="padding-left: 20px;"><a href=""><span class = "tensp-giohang">'+productName+'</span></a></td><td><bdi>'+productPrice+'</bdi><span class="price">đ</span></td><td style="padding: 20px;"><input type="number" value="1" min="0" style="width: 30px; outline: none;"></td><td style="cursor: pointer; padding: 20px;;"><span class="deletesp">Xóa</span></td></tr>'
+    const trcontent = '<tr class="bodytable"><td><img src='+productImg+' alt="" style="width: 70px;"></td><td style="padding-left: 20px;"><a href=""><span class = "tensp-giohang">'+productName+'</span></a></td><td><bdi>'+productPrice+'</bdi></td><td style="padding: 20px;"><input type="number" value="1" min="0" id="input" onChange="updateCart()" style="width: 30px; outline: none;"></td><td style="cursor: pointer; padding: 20px;;"><span id="deletesp" onclick="deleteCart()">Xóa</span></td></tr>'
     addtr.innerHTML = trcontent
     const cartTable = document.querySelector("tbody")
-    //console.log(cartTable)
+  
     cartTable.append(addtr);
-    cartTotal()
+  
 }
 const them = document.querySelectorAll(".product-name a")
-console.log('Doan Khoe', them)
-them?.forEach(function(a){
+them.forEach(function(a){
 
     a.addEventListener("click",function(event){{
         const btnAdd = event.target
@@ -150,25 +286,71 @@ function cartTotal(){
     for ( const i = 0; i < cartItem.length ; i++){
         const inputValue = parseFloat(cartItem[i].querySelector("input").value)
         const productPrice = parseFloat(cartItem[i].querySelector("bdi").innerHTML)
-        //var newsproductPrice = productPrice.split('.').join("")
-        //console.log(inputValue)
-        //console.log(productPrice)
+       
         totalA = inputValue * productPrice *1000
-        totalC = totalC + totalA
+        totalC = totalC +totalA
         totalD = totalC.toLocaleString('de-DE')
+        
     }
     const cartTotalA = document.querySelector(".modal-footer span")
     cartTotalA.innerHTML = totalD
 }
 //Xóa sản phẩm
 function deleteCart(){
-    const cartItem = document.querySelectorAll("tbody tr")
-    for ( const i = 0; i < cartItem.length ; i++){
-        const productT = document.querySelectorAll(".deletesp")
-        productT[i].addEventListener("click",function(event){
-            const cartDelete = event.target
-            const cartIteam = cartDelete.parentElement.parentElement
-            cartIteam.remove()
-        })
-    }
+    const cartDelete = event.target
+    const cartIteam = cartDelete.parentElement.parentElement
+    const price = event.target.parentElement.parentElement.children[2].children[0].innerText
+    const mul = event.target.parentElement.parentElement.children[3].children[0].value
+    const rowValue = parseInt(price) * parseInt(mul)
+    sum -= rowValue
+    updatePrice()
+    cartIteam.remove()
 }
+
+function updatePrice() {
+    const sum = calculateCartTotal(); // Tính tổng tiền của giỏ hàng
+    const totalPriceElement = document.getElementById('tongtien');
+    totalPriceElement.innerText = sum.toLocaleString('de-DE') + '.000đ'; // Hiển thị tổng tiền có định dạng
+}
+
+// Hàm tính tổng tiền của giỏ hàng
+function calculateCartTotal() {
+    let sum = 0;
+    const cartItems = document.querySelectorAll('.modal-body tbody tr');
+
+    cartItems.forEach((item) => {
+        const priceText = item.querySelector('td:nth-child(3) bdi').innerText;
+        const price = parseFloat(priceText.replace(',', '')); // Chuyển đổi giá thành số
+        const quantity = parseInt(item.querySelector('td:nth-child(4) input').value);
+        sum += price * quantity;
+    });
+
+    return sum;
+}
+
+
+
+function updateCart() {
+    const price = event.target.parentElement.parentElement.children[2].children[0].innerText
+    const before = event.target.parentElement.parentElement.children[3].children[0].defaultValue
+    const mul = event.target.parentElement.parentElement.children[3].children[0].value
+    sum += parseInt(price) * (parseInt(mul) - parseInt(before))
+    event.target.parentElement.parentElement.children[3].children[0].defaultValue = mul
+    updatePrice()
+}
+
+
+// Hàm reset giỏ hàng
+function resetCart() {
+    const cartItems = document.querySelectorAll('.modal-body tbody tr');
+
+    cartItems.forEach((item) => {
+        item.remove(); 
+    });
+
+    count = 0;
+    document.getElementById("cartCount").innerText = count; 
+    sum = 0;
+    updatePrice(); 
+}
+
