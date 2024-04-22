@@ -9,15 +9,15 @@
     <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
     <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link href= "../css/family=Roboto.css"  rel='stylesheet'>
+    <link rel="stylesheet" href="../css/Roboto.css">
     <script src="../javacripts/main.js"></script>
 </head>
 <body>
     <header>
         <div class="container-fluid top-bar">
-            <div class="container">
+            <div class="container" class="a-account">
                 <a href="#" class="a-vitri"><i class="fa fa-user" aria-hidden="true"><img src="../images/vitri.png" alt=""></i> Hệ thống cửa hàng</a>
-                <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""></i> Tài khoản</a>
+                <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""  ></i class="fa fa-user" aria-hidden="true"><span id="user-welcome">Tài khoản </span></a>
                 <div class="info-1">
                     <a href="#" class="info"><img src="../images/fb.png" alt="" style="margin-top: 9px; margin-left: 65px;"></a>
                     <a href="#" class="info"><img src="../images/email.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
@@ -145,20 +145,20 @@
     <section class="container-fluid dangnhap">
         <div class="form-dangnhap">
             <div class="title-login"><h3>ĐĂNG NHẬP</h3></div>
-            <form class="dangnhap-main" onsubmit="login()">
+            <form class="dangnhap-main" onsubmit="login(event)">
                 <div class="input__field-1">
-                    <p>Email*</p>
+                    <p>Email <span  id="email-error" style="color: red;" >*</span></p>
                     <input id="email" type="text">
                 </div>
                 <div class="input__field-2">
-                    <p>Mật khẩu*</p>
-                    <input id="password" type="password">
+                    <p>Mật khẩu  <span  id="password-error" style="color: red;">*</span></p>
+                    <input id="password" type="password" >
                 </div>
                 <div class="dangnhap-bottom">
                     <a class="quenmk" href="../HTML/QuenMatKhau.html"><strong>Quên mật khẩu? </strong></a>
                     <p class="dangky-login"> <a href="dangky.html"><strong>Đăng ký</strong></a></p>
                 </div>
-                <button class="btn-dangnhap">ĐĂNG NHẬP</button>
+                <button class="btn-dangnhap" type="submit" >ĐĂNG NHẬP</button>
             </form>
         </div>
         

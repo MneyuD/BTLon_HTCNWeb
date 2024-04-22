@@ -10,15 +10,14 @@
     <script src="../css/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../javacripts/jquery-3.7.1.map.js"></script>
-    <link href="../css/family=Roboto.css" rel='stylesheet'>
-   
+    <link rel="stylesheet" href="../css/Roboto.css">
 </head>
 <body>
         <header>
-            <div class="container-fluid top-bar">
-                <div class="container">
+            <div class="container-fluid top-bar" >
+                <div class="container" class="a-account">
                     <a href="#" class="a-vitri"><i class="fa fa-user" aria-hidden="true"><img src="../images/vitri.png" alt=""></i> Hệ thống cửa hàng</a>
-                    <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""></i> Tài khoản</a>
+                    <a href="dangnhap.html" class="a-account"><i class="fa fa-user" aria-hidden="true"><img src="../images/account.png" alt=""></i class="fa fa-user" aria-hidden="true"> <span id="user-welcome">Tài khoản </span></a>
                     <a href="#" class="info"><img src="../images/fb.png" alt="" style="margin-top: 9px; margin-left: 65px;"></a>
                     <a href="#" class="info"><img src="../images/email.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
                     <a href="#" class="info"><img src="../images/instagram.png" alt="" style="margin-top: 9px; margin-left: 10px;"></a>
@@ -46,12 +45,12 @@
                         <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -7px;">Tổng đài miễn phí</span>
                     </div>
                     <div class="giohang">
-                        <button data-bs-toggle="modal" data-bs-target="#giohangmodal">
+                        <button data-bs-toggle="modal" data-bs-target="#giohangmodal" id="modal">
                             <img src="../images/shopping-basket.png" alt="" style="width: 20px; margin-top: 1px; margin-left: -230px;">
                             <span class="sdt" style="font-size: 15px; margin-left: 32px; margin-top: -5px; float: left;">(<span id="cartCount">0</span>) Sản phẩm</span>
                             <span class="sdt-1" style="font-size: 12px; float: left; margin-left: 35px; margin-top: -2px;">Giỏ hàng</span>
                         </button>
-                        <div class="modal fade" id="giohangmodal" role="dialog">
+                        <div class="modal fade" id="giohangmodal" role="dialog" >
                             <div class="modal-dialog modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header"><h4 style="text-align: center; margin-left: 300px;">GIỎ HÀNG</h4>
@@ -76,9 +75,9 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <h5 style="font-size: 17px; font-weight: bold;">Tổng tiền: <span class="tongtien">0</span></h5>
-                                        <button style="background-color: #48a9d3;">Thanh Toán</button>
+                                    <div class="modal-footer" id="checkoutForm" >
+                                        <h5 style="font-size: 17px; font-weight: bold;">Tổng tiền: <span id="tongtien">0</span></h5>
+                                        <button style="background-color: #48a9d3;"  id="checkoutBtn" onclick="checkout()"  data-bs-dismiss="modal">Thanh Toán</button>
                                     </div>
                                 </div>
                                 
@@ -101,7 +100,7 @@
                                                     <li class="submenu-2"><a href="thucanhat-cho.html">Thức ăn hạt</a></li>
                                                     <li class="submenu-2"><a href="anvatcho-cho.html">Ăn vặt, bánh thưởng</a></li>
                                                     <li class="submenu-2"><a href="patecho-cho.html">Pate, đồ hộp và sữa cho chó</a></li>
-                                                    <li class="submenu-2"><a href="patecho-cho.html">Đồ chơi cho chó</a></li>
+                                                 
                                                 </ul>
                                             </li>
                                             <li class="submenu-meocung"><a href="meo.html"><img src="../images/cat.png" alt=""> Mèo cưng<img src="../images/right-2.png" class="right-2"></a>
@@ -196,7 +195,7 @@
                                 <br>
                                 <bdi>80.000</bdi><span class="price">đ</span>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img id="picturesp" class="anhspnb" src="../images/products/spnb_4.png" alt="">
@@ -205,7 +204,7 @@
                                 <br>
                                 <bdi>105.000</bdi><span class="price">đ</span>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img id="picturesp" class="anhspnb" src="../images/products/spnb_2.png" alt="">
@@ -214,7 +213,7 @@
                                 <br>
                                 <bdi>375.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/products/spnb_3.png" alt="">
@@ -223,7 +222,7 @@
                                 <br>
                                 <bdi>460.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/products/spnb_5.png" alt="">
@@ -232,7 +231,7 @@
                                 <br>
                                 <bdi>19.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +252,7 @@
                                     <bdi>19.000<span class="price">đ</span></bdi>
                                 </div>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/flashsale/flashsale2.jpg" alt="">
@@ -265,7 +264,7 @@
                                     <bdi>165.000<span class="price">đ</span></bdi>
                                 </div>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/flashsale/flashsale3.jpg" alt="">
@@ -277,7 +276,7 @@
                                     <bdi>34.000<span class="price">đ</span></bdi>
                                 </div>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/flashsale/flashsale4.webp" alt="">
@@ -289,7 +288,7 @@
                                     <bdi>85.000<span class="price">đ</span></bdi>
                                 </div>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/flashsale/flashsale5.jpg" alt="">
@@ -301,7 +300,7 @@
                                     <bdi>25.000<span class="price">đ</span></bdi>
                                 </div>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                     </div>
                 </div>
@@ -334,7 +333,7 @@
                                 <br>
                                 <bdi>120.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chocho-trangchu/chochott2.jpg" alt="">
@@ -343,7 +342,7 @@
                                 <br>
                                 <bdi>35.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chocho-trangchu/chochott4.jpg" alt="">
@@ -352,7 +351,7 @@
                                 <br>
                                 <bdi>185.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chocho-trangchu/chochott3.jpg" alt="">
@@ -361,7 +360,7 @@
                                 <br>
                                 <bdi>399.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chocho-trangchu/chochott5.jpg" alt="">
@@ -370,7 +369,7 @@
                                 <br>
                                 <bdi>275.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                     </div>
                 </div>
@@ -390,7 +389,7 @@
                                 <br>
                                 <bdi>65.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chomeo-trangchu/chomeott2.jpg" alt="">
@@ -399,7 +398,7 @@
                                 <br>
                                 <bdi>422.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chomeo-trangchu/chomeott3.jpg" alt="">
@@ -408,7 +407,7 @@
                                 <br>
                                 <bdi>780.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chomeo-trangchu/chomeott4.jpg" alt="">
@@ -417,7 +416,7 @@
                                 <br>
                                 <bdi>28.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                         <div class="col-md-3 sanpham">
                             <img class="anhspnb" src="../images/chomeo-trangchu/chomeott5.jpg" alt="">
@@ -426,7 +425,7 @@
                                 <br>
                                 <bdi>620.000<span class="price">đ</span></bdi>
                             </div>
-                            <button class="themvaogiohang-btn">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
+                            <button class="themvaogiohang-btn" id="modal">Thêm vào giỏ hàng <img src="../images/add-to-cart (1).png " alt="" style="width: 20px;  margin-top: -2px;"></button>
                         </div>
                     </div>
                 </div>
@@ -442,28 +441,28 @@
                         <div class="col tintuc-1">
                             <div class="news">
                                 <img src="../images/news/tintuc1.png" alt="">
-                                <a >BẬT MÍ 05 LOẠI BÁNH THƯỞNG CHO CÚN NGAY TRONG BẾP CỦA BẠN</a>
+                                <a href="">BẬT MÍ 05 LOẠI BÁNH THƯỞNG CHO CÚN NGAY TRONG BẾP CỦA BẠN</a>
                                 <br>
                                 <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 14/11/2023</p>
                                 <p class="news-noidung">PET'S HOME SALE SẬP SÀN 🔥 - SEN ĐỪNG BỎ LỠ 🥳️🤩CÁC SẢN PHẨM TRỊ VE RẬN CHO CHÓ MÈO. 🐈🐕👉 Mùa ...</p>
                             </div>
                             <div class="news">
                                 <img src="../images/news/tintuc2.png" alt="">
-                                <a >THẬT SỰ SỬ DỤNG BÁNH THƯỞNG CHO CHÓ MÈO CÓ LÀM CHÚNG NGHE LỜI?</a>
+                                <a href="">THẬT SỰ SỬ DỤNG BÁNH THƯỞNG CHO CHÓ MÈO CÓ LÀM CHÚNG NGHE LỜI?</a>
                                 <br>
                                 <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 16/10/2023</p>
                                 <p class="news-noidung">Bên cạnh các bữa ăn chính, bánh thưởng cho chó mèo là món ăn quen thuộc với các “Boss” cưng. ...</p>
                             </div>
                             <div class="news">
                                 <img src="../images/news/tintuc3.png" alt="">
-                                <a >BÁNH THƯỞNG CHÓ DẠNG KHÔ HAY ƯỚT TỐT HƠN?</a>
+                                <a href="">BÁNH THƯỞNG CHÓ DẠNG KHÔ HAY ƯỚT TỐT HƠN?</a>
                                 <br>
                                 <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 23/9/2023</p>
                                 <p class="news-noidung">Nếu bạn không thể chối từ trà sữa, thì chú chó của bạn cũng không dễ dàng gì bỏ qua các loại bánh thưởng chó ...</p>
                             </div>
                             <div class="news">
                                 <img src="../images/news/tintuc4.png" alt="">
-                                <a >
+                                <a href="">
                                     TUYỆT CHIÊU CHỌN THỨC ĂN CHO HUSKY MÙA RỤNG LÔNG</a>
                                 <br>
                                 <p class="ngaygio"><img src="../images/calendar.png" alt="" style="width: 12px; height: 12px;"> 12/9/2023</p>
@@ -518,13 +517,13 @@
                         <h5>Liên hệ</h5>
                         <span>CÔNG TY CỔ PHẦN THUƠNG MẠI & DỊCH VỤ</span>
                         <br>
-                        <span>Hello </span>
+                        <span>Trần Đoàn Khỏe </span>
                         <br>
-                        <span>12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh, Việt Nam</span>
+                        <span>Thành phố Hồ Chí Minh, Việt Nam</span>
                         <br>
-                        <span><img src="../images/telephone-handle-silhouette1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Hotline: 012345678</span>
+                        <span><img src="../images/telephone-handle-silhouette1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Hotline: 0975848124</span>
                         <br>
-                        <span><img src="../images/email1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Email: sinhvien@gmail.com</span>
+                        <span><img src="../images/email1.png" alt="" style="width: 50px; padding: 15px; margin-left: -15px;"> Email: doanKhoe0809@gmail.com</span>
                     </div>
                 </div>
             </div>
@@ -535,4 +534,5 @@
     
 </body>
 </html>
+
 <script src="../javacripts/main.js"></script>
